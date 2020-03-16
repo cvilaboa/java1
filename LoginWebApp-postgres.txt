@@ -1,0 +1,17 @@
+SQL
+CREATE TABLE "USER" (
+  id SERIAL PRIMARY KEY,
+  first_name varchar(45) NOT NULL,
+  last_name varchar(45) NOT NULL,
+  email varchar(45) NOT NULL,
+  username varchar(45) NOT NULL,
+  password varchar(45) NOT NULL,
+  regdate date NOT NULL
+);
+
+Connection
+Driver: org.postgresql.Driver
+url: jdbc:postgresql://localhost:5432/testjelastic
+INSERT: st.executeUpdate("insert into \"USER\"(first_name, last_name, email, username, password, regdate) values ('" + firstName + "','" 
+    + lastName + "','" + email + "','" + userName + "','" + password + "', CURDATE())");
+SELECT: st.executeQuery("select * from \"user\" where userName='" + userName + "' and password='" +password + "'");
